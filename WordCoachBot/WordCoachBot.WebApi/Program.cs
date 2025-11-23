@@ -1,16 +1,28 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using WordCoachBot.Application;
 using WordCoachBot.Application.Options;
+using WordCoachBot.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// DbContext + PostgreSQL
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseNpgsql(
+        builder.Configuration.GetConnectionString("DefaultConnection")
+    );
+});
+
+// Configure TelegramBot options
+builder.Services.Configure<TelegramBotOptions>(
+    builder.Configuration.GetSection(TelegramBotOptions.SectionName));
 
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.Configure<TelegramBotOptions>(
-    builder.Configuration.GetSection(TelegramBotOptions.SectionName)
-);
+
 
 // Временная заглушка сервиса слов
 builder.Services.AddScoped<IWordService, DummyWordService>();
