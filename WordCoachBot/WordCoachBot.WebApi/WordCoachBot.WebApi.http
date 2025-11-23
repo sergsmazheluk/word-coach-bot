@@ -1,0 +1,6 @@
+@WordCoachBot.WebApi_HostAddress = http://localhost:5193
+
+GET {{WordCoachBot.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

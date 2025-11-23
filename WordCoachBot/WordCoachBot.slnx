@@ -2,4 +2,8 @@
   <Folder Name="/Solution Items/">
     <File Path=".gitignore" />
   </Folder>
+  <Project Path="WordCoachBot.Application/WordCoachBot.Application.csproj" Id="fcd433da-ee75-4b14-99e2-1120a1c46809" />
+  <Project Path="WordCoachBot.Domain/WordCoachBot.Domain.csproj" Id="145871c5-b951-44b7-8dee-9f2baa57b8a4" />
+  <Project Path="WordCoachBot.Infrastructure/WordCoachBot.Infrastructure.csproj" Id="4dcbc7d9-55e6-4b68-996d-8020114b87b0" />
+  <Project Path="WordCoachBot.WebApi/WordCoachBot.WebApi.csproj" Id="44c84645-a2ce-465c-966f-ab60eb1cc752" />
 </Solution>
